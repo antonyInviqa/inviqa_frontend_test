@@ -45,6 +45,66 @@ card styles
   margin-top: 15px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 
+  .back {
+    display: none;
+  }
+
+  // when flipped
+  &.js-flipped {
+    .flip-container {
+      -webkit-perspective: 1000;
+      background: $color-grey;
+    }
+
+    .flip-container:hover .flipper {
+      -webkit-transform: rotateY(180deg);
+    }
+
+    .flip-container,
+    .front,
+    .back {
+      display: block;
+      width: 320px;
+      min-height: 630px;
+    }
+
+    /* flip speed goes here */
+    .flipper {
+      -webkit-transition: 0.6s;
+      -webkit-transform-style: preserve-3d;
+      position: relative;
+    }
+
+    /* hide back of pane during swap */
+    .front,
+    .back {
+      -webkit-backface-visibility: hidden;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    /* front pane, placed above back */
+    .front {
+      z-index: 2;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* back, initially hidden pane */
+    .back {
+      -webkit-transform: rotateY(180deg);
+      background-color: $color-green;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      text-transform: uppercase;
+      padding: 20px;
+    }
+  }
+
   &__details {
     padding: 10px 20px;
   }
@@ -85,16 +145,18 @@ card styles
 }
 
 /*************************
-swatches section
+swatches section/form
 *************************/
+form {
+  margin-top: auto;
+}
 
 .swatch {
   display: flex;
-  margin: 20px 0;
+  margin: 20px;
 
   //label
   &__item-label {
-    flex: 1;
     height: 55px;
     box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
@@ -118,21 +180,31 @@ swatches section
       position: absolute;
       clip-path: polygon(100% 0, 0 0, 0 100%);
     }
+  }
 
-    &:not(:nth-child(2)) {
-      margin-left: 15px;
-    }
-    &:nth-child(2) {
+  div {
+    flex: 1;
+
+    &:nth-child(1) {
       background-color: #000;
     }
-    &:nth-child(4) {
+    &:nth-child(2) {
       background-color: #e45252;
     }
-    &:nth-child(6) {
+    &:nth-child(3) {
       background-color: #ddd;
+      .swatch__item:checked {
+        & + label::after {
+          border-color: #6b6161;
+        }
+      }
     }
-    &:nth-child(8) {
+    &:nth-child(4) {
       background-color: #2e88f7;
+    }
+
+    & + div {
+      margin-left: 15px;
     }
   }
 
@@ -141,17 +213,13 @@ swatches section
     display: none;
 
     &:checked {
-      & + label {
-        // opacity: 0.8;
-      }
-
       //check mark
       & + label::after {
         content: "";
         display: block;
         width: 8px;
         height: 20px;
-        border: solid #5d5d5d;
+        border: solid #fff;
         border-width: 0 6px 6px 0;
         transform: rotate(45deg);
         z-index: 1;
@@ -191,5 +259,12 @@ call to action
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
     position: relative;
     z-index: 1;
+
+    &.active {
+      transition: all 0.3s;
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
   }
 }
