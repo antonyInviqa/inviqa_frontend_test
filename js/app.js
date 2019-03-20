@@ -15,6 +15,8 @@ swatches.forEach((swatch) => {
     button.style.cursor = 'pointer';
     button.disabled = false;
     button.classList.add('active');
+
+    submitAction();
   });
 })
 
@@ -24,11 +26,3 @@ function submitAction(){
     selectionCard.classList.add('js-flipped');
   });
 }
-
-submitAction();
-
-// const validateMyForm = (e) => {
-//   e.preventDefault();
-//   console.log(1);
-//   return true;
-// }
