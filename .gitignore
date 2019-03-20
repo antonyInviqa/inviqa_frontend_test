@@ -1,0 +1,13 @@
+.DS_Store
+
+# sass cache
+.sass-cache/
+
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# vscode
+.vscode/
