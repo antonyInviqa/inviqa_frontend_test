@@ -3,64 +3,77 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="ie=edge" http-equiv="X-UA-Compatible" />
   <title>Inviqa test</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet">
-
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,700" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
 </head>
 
 <body>
   <div class="container">
     <h2>Your selection</h2>
     <div class="selection-card">
-      <div class="selection-card__image">
-        <img src="images/rangerover.jpg" alt="" />
-      </div>
-      <div class="selection-card__details">
-        <ul class="selection-card__details-list">
-          <li class="selection-card__details-list-item">
-            <h3 class="car-title">Range Rover</h3>
-          </li>
-          <li class="selection-card__details-item">
-            <span>2017</span>
-          </li>
-          <li class="selection-card__details-item">
-            <span>4x4</span>
-          </li>
-          <li class="selection-card__details-item">
-            <span>3.0L Diesel 258HP</span>
-          </li>
-        </ul>
-        <div class="selection-card__price">
-          <span class="price-label">OTR Price</span>
-          <span class="price-amount">£ <span>24,500</span></span>
+      <div class="flip-container">
+        <div class="flipper">
+          <div class="front">
+            <div class="selection-card__image">
+              <img alt="" src="images/rangerover.jpg" />
+            </div>
+            <div class="selection-card__details">
+              <ul class="selection-card__details-list">
+                <li class="selection-card__details-list-item">
+                  <h3 class="car-title">Range Rover</h3>
+                </li>
+                <li class="selection-card__details-item">
+                  <span>2017</span>
+                </li>
+                <li class="selection-card__details-item">
+                  <span>4x4</span>
+                </li>
+                <li class="selection-card__details-item">
+                  <span>3.0L Diesel 258HP</span>
+                </li>
+              </ul>
+              <div class="selection-card__price">
+                <span class="price-label">OTR Price</span>
+                <span class="price-amount">£
+                  <span>24,500</span>
+                </span>
+              </div>
+            </div>
+              <form action="">
+                <div class="swatch">
+                  <div>
+                    <input class="swatch__item" id="swatch-1" name="swatch" type="radio" />
+                    <label class="swatch__item-label" for="swatch-1" tabindex="1"></label>
+                  </div>
+                  <div>
+                    <input class="swatch__item" id="swatch-2" name="swatch" type="radio" />
+                    <label class="swatch__item-label" for="swatch-2" tabindex="1"></label>
+                  </div>
+                  <div>
+                    <input class="swatch__item" id="swatch-3" name="swatch" type="radio" />
+                    <label class="swatch__item-label" for="swatch-3" tabindex="1"></label>
+                  </div>
+                  <div>
+                    <input class="swatch__item" id="swatch-4" name="swatch" type="radio" />
+                    <label class="swatch__item-label" for="swatch-4" tabindex="1"></label>
+                  </div>
+                </div>
+                <div class="cta">
+                  <input class="cta__button" type="submit" value="Buy" />
+                </div>
+              </form>
+          </div>
+          <div class="back">
+            <h2>Thanks for filling out our form!</h2>
+          </div>
         </div>
-
-        <form action="">
-          <div class="swatch">
-            <input type="radio" id="swatch-1" class="swatch__item" name="swatch" />
-            <label for="swatch-1" class="swatch__item-label" tabindex="1"></label>
-
-            <input type="radio" id="swatch-2" class="swatch__item" name="swatch" />
-            <label for="swatch-2" class="swatch__item-label" tabindex="1"></label>
-
-            <input type="radio" id="swatch-3" class="swatch__item" name="swatch" />
-            <label for="swatch-3" class="swatch__item-label" tabindex="1"></label>
-
-            <input type="radio" id="swatch-4" class="swatch__item" name="swatch" />
-            <label for="swatch-4" class="swatch__item-label" tabindex="1"></label>
-          </div>
-
-          <div class="cta">
-            <input class="cta__button" type="submit" value="Buy">
-          </div>
-        </form>
-
       </div>
     </div>
-
-    <script src="js/app.js"></script>
+  </div>
+  <script src="js/app.js"></script>
 </body>
+
 </html>
